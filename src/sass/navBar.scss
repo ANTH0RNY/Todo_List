@@ -9,6 +9,13 @@
   .img-wrapper {
     grid-column: 1/3;
     justify-self: left;
+    &:hover{
+      cursor: pointer;
+      // img{
+      //   box-shadow: #36413E 0px 2px 8px 0px;
+      //   border-radius: 50%;
+      // }
+    }
   }
   .brand {
     grid-column: 5/9;

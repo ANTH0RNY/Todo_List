@@ -7,11 +7,18 @@ import './sass/main.scss'
 const body=getElement('body')
 const nav=navbar()
 const menu=createMenu()
-const main=createMain()
+const mainBody=createMain()
+
+const main=createSetElement('div',{
+    class:"main"
+})
+
+main.appendChild(menu)
+main.appendChild(mainBody)
 
 body.appendChild(nav)
-body.appendChild(menu)
 body.appendChild(main)
+// body.appendChild(menu)
 
 
 console.log("Hello world")
