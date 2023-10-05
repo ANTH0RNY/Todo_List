@@ -16,8 +16,8 @@ module.exports={
   module:{
     rules:[
       {
-        test: /\.css$/i,
-        use:['style-loader', 'css-loader']
+        test: /\.s[ac]ss$/i,
+        use:['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -31,11 +31,7 @@ module.exports={
   },
   plugins: [
     new HtmlWebpackPlugin({
-    title: 'ToDo'
+    title: 'Lets Do It!'
   }),
   ],
-//  optimization:{
-//  runtimeChunk: 'single'
-  //}
-
 }
