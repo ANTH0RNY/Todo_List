@@ -27,12 +27,17 @@ function manageProjects(){
         const newProject=new project(name)
         return newProject
     }
-
+    function createAddProject(name){
+        const newProject=new project(name)
+        myProjects.push(newProject)
+        return newProject
+    }
     return {
         addProject,
         getProjects,
         getProjectNames,
-        createProject
+        createProject,
+        createAddProject
     }
 }
 
