@@ -33,13 +33,13 @@ function createForm() {
         if (content.length == 0) {
             return
         }
-        console.log(content)
+        // console.log(content)
         // const items=document.querySelectorAll('.project-item')
         const myProjects = getElement('.my-project');
         const title = myProjects.firstChild
         myProjects.innerHTML = ''
         myProjects.appendChild(title)
-        console.log(title)
+        // console.log(title)
 
         projectManager.createAddProject(content)
         const projecLIst = projectManager.getProjectNames()

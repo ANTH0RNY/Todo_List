@@ -5,11 +5,12 @@ import all from "../img/icons/all.png";
 import important from "../img/icons/important.png";
 import today from "../img/icons/today.png";
 import week from "../img/icons/week.png";
+import createAddForm from "./ addBtn";
 
 import "../sass/menu.scss";
 
 function createMenu() {
-  console.log(manageProjects().getProjectNames());
+  // console.log(manageProjects().getProjectNames());
   const projectManager = manageProjects();
   const wrapper = createSetElement("div", {
     class: "menu",
@@ -44,21 +45,21 @@ function createMenu() {
 
   myProjects.appendChild(head2);
 
-  // function updateProjects() {
-    const myProject = projectManager.getProjects();
-    myProject.forEach((val, index) => {
-      const projectItem = createSetElement("div", {
-        class: "project-item",
-        id:`project-item-${index}`,
-        'data-projectId':index
-      });
-      projectItem.innerText = val.name;
-      myProjects.appendChild(projectItem);
+  const myProject = projectManager.getProjects();
+  myProject.forEach((val, index) => {
+    const projectItem = createSetElement("div", {
+      class: "project-item",
+      id: `project-item-${index}`,
+      "data-projectId": index,
     });
-  // }
-  // updateProjects();
+    projectItem.innerText = val.name;
+    myProjects.appendChild(projectItem);
+  });
 
   const form = createForm();
+  form.classList.toggle('not-visible')
+  const addbtn = createAddForm(form);
+  myProjects.appendChild(addbtn);
   myProjects.appendChild(form);
   wrapper.appendChild(home);
   wrapper.appendChild(myProjects);

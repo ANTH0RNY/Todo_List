@@ -5,7 +5,6 @@ const week=new project('Week')
 const important=new project('Important')
 
 
-// const defaultProjects=[today,week,important]
 const defaultProject= new project('myProject')
 const myProjects=[defaultProject]
 

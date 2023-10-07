@@ -1,4 +1,4 @@
-import { createSetElement, createFullElement } from "../util"
+import { createSetElement, createFullElement, getElement } from "../util"
 import img1 from '../img/icons/icons8-menu-50.png'
 import img2 from '../img/icons/toDo.png'
 import "../sass/navBar.scss"
@@ -19,6 +19,11 @@ function navBar() {
   })
 
   imgWrapper.appendChild(menuIcon)
+  imgWrapper.addEventListener('click',()=>{
+    const menu = getElement('.menu')
+    menu.classList.toggle('not-visible')
+  })
+
   const title = createFullElement('div', {
     class: "brand"
   }, `<img src=${img2} alt="brand"/> <span>Lets Do this<span>`)
