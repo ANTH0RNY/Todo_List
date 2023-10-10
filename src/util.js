@@ -24,12 +24,17 @@ function createFullElement(type, attributes={}, content=''){
     element.innerHTML=content
     return element
 }
-
+function appendChildren(el, children=[]){
+    children.forEach((value)=>{
+        el.appendChild(value)
+    })
+}
 export {
     getElement,
     createElement,
     setAttributes,
     createSetElement,
-    createFullElement
+    createFullElement,
+    appendChildren,
 }
 

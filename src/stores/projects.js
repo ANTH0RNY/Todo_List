@@ -31,15 +31,26 @@ function manageProjects(){
         myProjects.push(newProject)
         return newProject
     }
-    function addToDo(project, toDo) {
+    function addToDo(projectName, todo) {
       const myProjectName=getProjectNames()
+      if (myProjectName.includes(projectName) && todo instanceof toDo){
+            const theProject=myProjects.filter((proj)=> proj.name === projectName)
+            theProject[0].addTodo(todo)
+            return
+      }
+      console.log('Failed to add toDo');
+      return
     }
+
+
+
     return {
         addProject,
         getProjects,
         getProjectNames,
         createProject,
-        createAddProject
+        createAddProject,
+        addToDo
     }
 }
 
