@@ -2,7 +2,7 @@ import { createSetElement, createFullElement, appendChildren} from "../util";
 
 function toDoElement(todo){
     const element=createSetElement('div',{
-        class:`toDo-element ${!todo.done? 'strike-through':''}`
+        class:`toDo-element ${todo.done? 'strike-through':''}`
     })
 
     const title=createFullElement('div', {

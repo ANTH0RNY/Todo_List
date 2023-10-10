@@ -1,8 +1,8 @@
 import { project, toDo } from "../app/class"
 
-const today= new project('Today')
-const week=new project('Week')
-const important=new project('Important')
+// const today= new project('Today')
+// const week=new project('Week')
+// const important=new project('Important')
 
 
 const defaultProject= new project('myProject')
@@ -41,7 +41,10 @@ function manageProjects(){
       console.log('Failed to add toDo');
       return
     }
-
+    function createToDo(title, body, priority, due) {
+        const newToDo=new toDo(title,body, priority, due) 
+        return newToDo
+      }
 
 
     return {
@@ -50,8 +53,16 @@ function manageProjects(){
         getProjectNames,
         createProject,
         createAddProject,
-        addToDo
+        addToDo,
+        createToDo
     }
 }
+const todo1=new toDo('title1', 'body1', 'priority1', 'due1')
+const todo2=new toDo('title2', 'body2', 'priority2', 'due2')
+const todo3=new toDo('title3', 'body3', 'priority3', 'due3')
+defaultProject.addTodo(todo1)
+defaultProject.addTodo(todo2)
+defaultProject.addTodo(todo3)
+console.log(defaultProject);
 
 export default manageProjects
