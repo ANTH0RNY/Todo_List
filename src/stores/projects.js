@@ -31,6 +31,9 @@ function manageProjects(){
         myProjects.push(newProject)
         return newProject
     }
+    function addToDo(project, toDo) {
+      const myProjectName=getProjectNames()
+    }
     return {
         addProject,
         getProjects,

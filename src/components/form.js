@@ -45,7 +45,7 @@ function createForm() {
         const projecLIst = projectManager.getProjectNames()
         projecLIst.forEach((val, index) => {
             const projectItem = createSetElement("div", {
-                class: "project-item",
+                class: "project-item item",
                 id: `project-item-${index}`,
                 'data-projectId':index
             });
@@ -58,13 +58,16 @@ function createForm() {
 
     })
     input.addEventListener('keydown',(e)=>{
-        // console.log(e.key);
         if (e.key==='Enter'){
             add.click()
             input.focus()
         }
     })
-
+    cancel.addEventListener('click', ()=>{
+        const addBtn=getElement('.add-btn')
+        form.classList.toggle('not-visible')
+        addBtn.classList.toggle('not-visible')
+    })
     form.appendChild(input)
     form.appendChild(btns)
 

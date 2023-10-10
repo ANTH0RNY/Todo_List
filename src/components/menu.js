@@ -5,7 +5,7 @@ import all from "../img/icons/all.png";
 import important from "../img/icons/important.png";
 import today from "../img/icons/today.png";
 import week from "../img/icons/week.png";
-import createAddForm from "./ addBtn";
+import createAddForm from "./addBtn";
 
 import "../sass/menu.scss";
 
@@ -27,7 +27,7 @@ function createMenu() {
   ];
   homeItems.forEach((val, index) => {
     const item = createSetElement("div", {
-      class: `home-item ${val.name}`,
+      class: `home-item ${val.name} item`,
       id: `home-${index}`,
     });
     item.innerHTML = `<img src=${val.img} alt=${val.name} /> <span>${val.name}</span>`;
@@ -48,7 +48,7 @@ function createMenu() {
   const myProject = projectManager.getProjects();
   myProject.forEach((val, index) => {
     const projectItem = createSetElement("div", {
-      class: "project-item",
+      class: "project-item item",
       id: `project-item-${index}`,
       "data-projectId": index,
     });
