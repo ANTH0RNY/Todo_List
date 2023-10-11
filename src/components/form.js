@@ -1,6 +1,6 @@
 import { createSetElement, createFullElement, getElement } from "../util";
 import manageProjects from "../stores/projects";
-
+import projectDisplay from "./projectsDisplay";
 
 function createForm() {
     const projectManager = manageProjects()
@@ -11,7 +11,7 @@ function createForm() {
 
     const input = createSetElement('input', {
         class: "project-input",
-        placeholder:"Add project"
+        placeholder: "Add project"
     })
 
     const btns = createSetElement('div', {
@@ -47,24 +47,30 @@ function createForm() {
             const projectItem = createSetElement("div", {
                 class: "project-item item",
                 id: `project-item-${index}`,
-                'data-projectId':index
+                'data-projectId': index
             });
             projectItem.innerText = val;
+            projectItem.addEventListener('click', () => {
+                const mainBody = getElement('.project-area')
+                mainBody.innerHTML = ''
+                const forProject = projectManager.getProjectByName(val)
+                projectDisplay(forProject, mainBody)
+            })
             myProjects.appendChild(projectItem);
         })
-        input.value=''
+        input.value = ''
         input.focus()
         myProjects.appendChild(form)
 
     })
-    input.addEventListener('keydown',(e)=>{
-        if (e.key==='Enter'){
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
             add.click()
             input.focus()
         }
     })
-    cancel.addEventListener('click', ()=>{
-        const addBtn=getElement('.add-btn')
+    cancel.addEventListener('click', () => {
+        const addBtn = getElement('.add-btn')
         form.classList.toggle('not-visible')
         addBtn.classList.toggle('not-visible')
     })

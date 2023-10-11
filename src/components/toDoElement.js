@@ -23,7 +23,7 @@ function toDoElement(todo){
         // checked: todo.done
     })
 
-    appendChildren(element, [done, title, body, dueDate, priority])
+    appendChildren(element, [done, title, body,  priority, dueDate])
 
     return element
 }

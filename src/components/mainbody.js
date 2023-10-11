@@ -1,6 +1,7 @@
 import manageProjects from "../stores/projects";
 import { createSetElement, createFullElement } from "../util";
 import projectDisplay from "./projectsDisplay";
+import toDoForm from "./toDoForm";
 import img1 from '../img/icons/toDo.png'
 import '../sass/mainBody.scss'
 
@@ -19,7 +20,8 @@ function createMain() {
   })
   wrapper.appendChild(projectArea)
   // wrapper.appendChild(projectDisplay(projectManager.getProjects()[0]))
-  // projectDisplay(projectManager.getProjects()[0], wrapper)
+  projectDisplay(projectManager.getProjects()[0], projectArea)
+  // wrapper.appendChild(toDoForm())
   return wrapper
 }
 

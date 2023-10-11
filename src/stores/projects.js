@@ -65,8 +65,8 @@ function manageProjects(){
     }
 }
 const todo1=new toDo('title1', 'body1', 'priority1')
-const todo2=new toDo('title2', 'body2', 'priority2')
-const todo3=new toDo('title3', 'body3', 'priority3')
+const todo2=new toDo('title2', 'body2', 'later')
+const todo3=new toDo('title3', 'body3', 'important')
 defaultProject.addTodo(todo1)
 defaultProject.addTodo(todo2)
 defaultProject.addTodo(todo3)

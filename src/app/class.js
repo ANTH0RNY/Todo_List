@@ -35,18 +35,19 @@ class toDo {
   set done(value) {
     this._done = !!value;
   }
-  // get priority(){
-  //   return this._priority
-  // }
-  // set priority(value){
-  //   if (priorities.includes(value.toLowerCase()))
-  //   {
-  //     this._priority=value
-  //     return
-  //   }
-  //   console.log('Priorty not in options')
-  //   return 'not important'
-  // }
+  get priority(){
+    return this._priority
+  }
+  set priority(value){
+    if (priorities.includes(value.toLowerCase()))
+    {
+      this._priority=value
+      return
+    }
+    console.log('Priorty not in options')
+    this._priority='not important'
+    return
+  }
 
 }
 
