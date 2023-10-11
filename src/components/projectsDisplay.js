@@ -2,7 +2,7 @@ import { createSetElement, createFullElement } from "../util";
 import toDoElement from "./toDoElement";
 import img1 from '../img/icons/plus.png'
 
-function projectDisplay(project){
+function projectDisplay(project, wrapper=null){
 
     const display=createSetElement('div',{
         class:"project-display"
@@ -19,7 +19,9 @@ function projectDisplay(project){
         display.appendChild(toDoElement(value))
     })
 
+    if (wrapper){
+        wrapper.appendChild(display)
+    }
     return display
 }
-
 export default projectDisplay

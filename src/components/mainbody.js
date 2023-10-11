@@ -14,7 +14,12 @@ function createMain() {
     class:"main-title"
   }, `<img src=${img1} alt="to do"/><span>Lets Do This</span>`)
   wrapper.appendChild(title)
-  wrapper.appendChild(projectDisplay(projectManager.getProjects()[0]))
+  const projectArea=createSetElement('div',{
+    class: 'project-area'
+  })
+  wrapper.appendChild(projectArea)
+  // wrapper.appendChild(projectDisplay(projectManager.getProjects()[0]))
+  // projectDisplay(projectManager.getProjects()[0], wrapper)
   return wrapper
 }
 

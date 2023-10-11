@@ -1,6 +1,8 @@
-import { createSetElement } from "../util";
+import { createSetElement, getElement } from "../util";
 import createForm from "./form";
 import manageProjects from "../stores/projects";
+// import projectDisplay from "./projectsDisplay";
+
 import all from "../img/icons/all.png";
 import important from "../img/icons/important.png";
 import today from "../img/icons/today.png";
@@ -8,6 +10,7 @@ import week from "../img/icons/week.png";
 import createAddForm from "./addBtn";
 
 import "../sass/menu.scss";
+import projectDisplay from "./projectsDisplay";
 
 function createMenu() {
   // console.log(manageProjects().getProjectNames());
@@ -53,6 +56,13 @@ function createMenu() {
       "data-projectId": index,
     });
     projectItem.innerText = val.name;
+    projectItem.addEventListener('click',()=>{
+      const mainBody=getElement('.project-area')
+      mainBody.innerHTML=''
+      const forProject=projectManager.getProjectByName(val.name)
+      // mainBody.appendChild()
+      projectDisplay(forProject, mainBody)
+    })
     myProjects.appendChild(projectItem);
   });
 

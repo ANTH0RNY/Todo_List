@@ -6,7 +6,8 @@ import { project, toDo } from "../app/class"
 
 
 const defaultProject= new project('myProject')
-const myProjects=[defaultProject]
+const project1 = new project("project one")
+const myProjects=[defaultProject, project1]
 
 function manageProjects(){
     function addProject(name){
@@ -44,7 +45,12 @@ function manageProjects(){
     function createToDo(title, body, priority, due) {
         const newToDo=new toDo(title,body, priority, due) 
         return newToDo
-      }
+    }
+    function getProjectByName(name){
+        const theProject=myProjects.filter((proj)=> proj.name === name)[0]
+        return theProject
+    }
+    // console.log(getProjectByName('myProject'));
 
 
     return {
@@ -54,12 +60,13 @@ function manageProjects(){
         createProject,
         createAddProject,
         addToDo,
-        createToDo
+        createToDo,
+        getProjectByName
     }
 }
-const todo1=new toDo('title1', 'body1', 'priority1', 'due1')
-const todo2=new toDo('title2', 'body2', 'priority2', 'due2')
-const todo3=new toDo('title3', 'body3', 'priority3', 'due3')
+const todo1=new toDo('title1', 'body1', 'priority1')
+const todo2=new toDo('title2', 'body2', 'priority2')
+const todo3=new toDo('title3', 'body3', 'priority3')
 defaultProject.addTodo(todo1)
 defaultProject.addTodo(todo2)
 defaultProject.addTodo(todo3)
