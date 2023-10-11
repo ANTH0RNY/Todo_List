@@ -1,0 +1,60 @@
+.main-body {
+    padding-inline: 1rem;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    font-size: 1rem;
+
+    // align-content: center;
+    .main-title {
+        font-size: 3rem;
+        font-weight: bold;
+        gap: 1rem;
+        display: flex;
+        align-self: center;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0;
+        img {
+            width: 4rem;
+        }
+    }
+
+    .project-display {
+        display: flex;
+        flex-direction: column;
+        .title-area {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            font-size: 1.5rem;
+            gap: 1rem;
+            border-bottom: solid 2px black;
+            margin-bottom: 1rem;
+
+            &>* {
+                margin-bottom: .5rem;
+            }
+
+            .add-btn {
+                height: 1.5rem;
+                justify-self: right;
+            }
+        }
+        .toDo-element{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 1.2rem;
+            padding: .2rem 0rem;
+            border: 1px solid black;
+            margin: .5rem 0;
+            border-radius: .3rem;
+            .done{
+                // width: 1.5rem;
+                scale: 1.2;
+            }
+        }
+    }
+}

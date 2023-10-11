@@ -2,6 +2,8 @@ import manageProjects from "../stores/projects";
 import { createSetElement, createFullElement } from "../util";
 import projectDisplay from "./projectsDisplay";
 import img1 from '../img/icons/toDo.png'
+import '../sass/mainBody.scss'
+
 const projectManager=manageProjects()
 
 function createMain() {

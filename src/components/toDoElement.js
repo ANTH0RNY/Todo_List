@@ -17,10 +17,11 @@ function toDoElement(todo){
     const priority=createFullElement('div',{
         class:'priority'
     },todo.priority)
-    const done=createFullElement('input',{
+    const done=createSetElement('input',{
         class:'done',
-        type: 'checkbox'
-    }, todo.done)
+        type: 'checkbox',
+        // checked: todo.done
+    })
 
     appendChildren(element, [done, title, body, dueDate, priority])
 
