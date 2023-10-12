@@ -1,23 +1,23 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports={
-  entry: "./src/index.js",
+module.exports = {
+  entry: './src/index.js',
   mode: 'development',
   devtool: 'inline-source-map',
-  devServer:{
+  devServer: {
     static: './dist'
   },
-  output:{
+  output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true
   },
-  module:{
-    rules:[
+  module: {
+    rules: [
       {
         test: /\.s[ac]ss$/i,
-        use:['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -31,8 +31,8 @@ module.exports={
   },
   plugins: [
     new HtmlWebpackPlugin({
-    title: 'Lets Do This!',
-    favicon:'./src/img/icons/toDo.png'
-  }),
-  ],
-}
+      title: 'Lets Do This!',
+      favicon: './src/img/icons/toDo.png'
+    })
+  ]
+};

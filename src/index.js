@@ -1,24 +1,23 @@
-import { getElement, createSetElement } from "./util";
-import  createMenu  from "./components/menu"
-import  createMain  from "./components/mainbody";
-import  navbar  from "./components/navbar";
-import './sass/main.scss'
+import { getElement, createSetElement } from './util';
+import createMenu from './components/menu';
+import createMain from './components/mainbody';
+import navbar from './components/navbar';
+import './sass/main.scss';
 
-const body=getElement('body')
-const nav=navbar()
-const menu=createMenu()
-const mainBody=createMain()
+const body = getElement('body');
+const nav = navbar();
+const menu = createMenu();
+const mainBody = createMain();
 
-const main=createSetElement('div',{
-    class:"main"
-})
+const main = createSetElement('div', {
+  class: 'main'
+});
 
-main.appendChild(menu)
-main.appendChild(mainBody)
+main.appendChild(menu);
+main.appendChild(mainBody);
 
-body.appendChild(nav)
-body.appendChild(main)
+body.appendChild(nav);
+body.appendChild(main);
 // body.appendChild(menu)
 
-
-console.log("Hello world")
+console.log('Hello world');

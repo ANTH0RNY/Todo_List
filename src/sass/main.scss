@@ -5,26 +5,35 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 1rem;
-  .main{
+
+  .main {
     display: flex;
-    .menu{
+
+    .menu {
       flex: 1;
     }
-    .main-body{
+
+    .main-body {
       flex: 3;
     }
   }
+
   &::-webkit-scrollbar {
     display: none;
   }
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
-.not-visible{
+
+.not-visible {
   display: none !important;
 }
-.active{
-      // background-color: rgba(90,169,230, .4) !important;
-      background-color: #053B50 !important;
-      color: white;
+
+.active {
+  // background-color: rgba(90,169,230, .4) !important;
+  background-color: #053b50 !important;
+  color: white;
 }

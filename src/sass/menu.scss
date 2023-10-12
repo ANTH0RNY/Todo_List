@@ -20,7 +20,12 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-
+        .item{
+            &>*{
+                background-color: inherit !important;
+                color: inherit !important;
+            }
+        }
         .home-item {
             width: 80%;
             height: 3rem;
