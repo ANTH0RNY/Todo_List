@@ -1,7 +1,6 @@
 import { createSetElement, getElement } from "../util";
 import createForm from "./form";
 import manageProjects from "../stores/projects";
-// import projectDisplay from "./projectsDisplay";
 
 import all from "../img/icons/all.png";
 import important from "../img/icons/important.png";
@@ -11,9 +10,9 @@ import createAddForm from "./addBtn";
 
 import "../sass/menu.scss";
 import projectDisplay from "./projectsDisplay";
+import removeClass from "./manage";
 
 function createMenu() {
-  // console.log(manageProjects().getProjectNames());
   const projectManager = manageProjects();
   const wrapper = createSetElement("div", {
     class: "menu",
@@ -35,6 +34,7 @@ function createMenu() {
     });
     item.innerHTML = `<img src=${val.img} alt=${val.name} /> <span>${val.name}</span>`;
     home.appendChild(item);
+    item.addEventListener('click', removeClass)
   });
 
   const myProjects = createSetElement("div", {
@@ -56,18 +56,19 @@ function createMenu() {
       "data-projectId": index,
     });
     projectItem.innerText = val.name;
-    projectItem.addEventListener('click',()=>{
-      const mainBody=getElement('.project-area')
-      mainBody.innerHTML=''
-      const forProject=projectManager.getProjectByName(val.name)
-      // mainBody.appendChild()
-      projectDisplay(forProject, mainBody)
-    })
+    projectItem.addEventListener("click", (e) => {
+      const mainBody = getElement(".project-area");
+      mainBody.innerHTML = "";
+      const forProject = projectManager.getProjectByName(val.name);
+      projectDisplay(forProject, mainBody);
+      removeClass(e)
+      
+    });
     myProjects.appendChild(projectItem);
   });
 
   const form = createForm();
-  form.classList.toggle('not-visible')
+  form.classList.toggle("not-visible");
   const addbtn = createAddForm(form);
   myProjects.appendChild(addbtn);
   myProjects.appendChild(form);

@@ -26,7 +26,7 @@ function navBar() {
 
   const title = createFullElement('div', {
     class: "brand"
-  }, `<img src=${img2} alt="brand"/> <span>Lets Do this<span>`)
+  }, `<img src=${img2} alt="brand"/> <span>Lets Do This<span>`)
   const search = createSetElement('div', {
     class: 'search'
   })

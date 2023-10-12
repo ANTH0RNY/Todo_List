@@ -2,10 +2,9 @@
     padding-inline: 1rem;
     display: flex;
     flex-direction: column;
-    // justify-content: center;
     font-size: 1rem;
+    background-color: #FFFFDD;
 
-    // align-content: center;
     .main-title {
         font-size: 3rem;
         font-weight: bold;
@@ -15,18 +14,21 @@
         align-items: center;
         justify-content: center;
         margin: 1rem 0;
+
         img {
             width: 4rem;
         }
     }
-.project-area{
-    display: flex;
-    flex-direction: column;
-    // align-items: center;
-}
+
+    .project-area {
+        display: flex;
+        flex-direction: column;
+    }
+
     .project-display {
         display: flex;
         flex-direction: column;
+
         .title-area {
             display: flex;
             align-items: end;
@@ -44,47 +46,41 @@
             .add-btn {
                 height: 1.5rem;
                 justify-self: right;
-                &:hover{
+
+                &:hover {
                     cursor: pointer;
                 }
             }
         }
-        .toDo-element{
-            // display: flex;
-            // width: 100%;
-            // align-items: center;
-            // justify-content: space-around;
+
+        .toDo-element {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             align-items: center;
             font-size: 1.2rem;
             padding: .5rem 0rem;
             margin: .2rem 0;
-            // gap: .2rem;
             border-radius: .3rem;
             border: 1px solid transparent;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 
-            &:hover{
-                // background-color: gray;
-                // background: #eee;
+            &:hover {
                 box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
                 border: 1px solid #d0d0d0;
                 background: #eee;
-                // border: 1px solid black;
             }
-            .done{
-                // width: 1.5rem;
+
+            .done {
                 scale: 1.5;
             }
         }
-        .toDo-form{
-            // display: grid;
-            // grid-template-columns: repeat(5, 1fr);
+
+        .toDo-form {
             display: flex;
             justify-content: space-around;
-            // font-size: 1.2rem;
             gap: 1rem;
-            input{
+
+            input {
                 width: 100%;
                 height: initial;
                 border: none;
@@ -92,17 +88,20 @@
                 border-left: 1px solid black;
                 padding-left: .5rem;
                 font-size: 1rem;
-                // border-bottom: 1px solid black;
-                &:focus{
+
+                &:focus {
                     border-bottom: 1px solid black;
                 }
-                ::placeholder{
+
+                ::placeholder {
                     font-size: 1.2rem;
                 }
             }
-            .add-toDo{
+
+            .add-toDo {
                 font-size: 1.5rem;
-                &:hover{
+
+                &:hover {
                     cursor: pointer;
                 }
             }

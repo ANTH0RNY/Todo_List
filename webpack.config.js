@@ -31,7 +31,7 @@ module.exports={
   },
   plugins: [
     new HtmlWebpackPlugin({
-    title: 'Lets Do It!',
+    title: 'Lets Do This!',
     favicon:'./src/img/icons/toDo.png'
   }),
   ],

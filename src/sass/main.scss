@@ -11,7 +11,7 @@ body {
       flex: 1;
     }
     .main-body{
-      flex: 4;
+      flex: 3;
     }
   }
   &::-webkit-scrollbar {
@@ -22,4 +22,9 @@ body {
 }
 .not-visible{
   display: none !important;
+}
+.active{
+      // background-color: rgba(90,169,230, .4) !important;
+      background-color: #053B50 !important;
+      color: white;
 }
