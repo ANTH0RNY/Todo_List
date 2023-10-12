@@ -12,7 +12,7 @@ import '../sass/menu.scss';
 import projectDisplay from './projectsDisplay';
 import { removeClass, All, Today, Important } from './manage';
 
-function createMenu () {
+function createMenu() {
   const projectManager = manageProjects();
   const wrapper = createSetElement('div', {
     class: 'menu'
